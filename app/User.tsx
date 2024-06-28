@@ -35,7 +35,7 @@ const Array = ({ navigation }) => {
   React.useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://192.168.188.46:8000/api/users"); //get api from laravel
+        const response = await fetch(api + "users"); //get api from laravel
         if (!response.ok) {
           throw new Error("Failed to fetch data");
         } //give an error message
@@ -54,12 +54,9 @@ const Array = ({ navigation }) => {
 
   const deleteUser = async (id) => {
     try {
-      const response = await fetch(
-        `http://192.168.188.46:8000/api/users/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const response = await fetch(api + `users/${id}`, {
+        method: "DELETE",
+      });
       if (!response.ok) {
         throw new Error(`Error: ${response.status}`);
       }

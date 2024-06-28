@@ -1,7 +1,9 @@
 {
+  "api": "http://192.168.252.46:8000/api/",
   "expo": {
     "name": "expoApp",
     "slug": "expoApp",
+    
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",

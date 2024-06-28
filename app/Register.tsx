@@ -22,7 +22,7 @@ export default function RegisterScreen() {
   };
 
   const Insertdata = async (name, email, password) => {
-    const endpoint = "http://192.168.188.46:8000/api/register";
+    const endpoint = "http://192.168.126.46:8000/api/register";
     const postData = {
       name: name,
       email: email,

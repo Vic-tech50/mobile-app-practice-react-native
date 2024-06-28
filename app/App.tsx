@@ -10,11 +10,17 @@ import VideoScreen from "./Video";
 import RegisterScreen from "./Register";
 import Array from "./User";
 import Sweet from "./Sweetalert";
+import HomeScreen from "./Home";
 import Awesome from "./Awesome";
+import Mobile from "./Mobile";
+import Menu from "./Menu";
+import Chipper from "./Chipper";
 import { MaterialCommunityIcons } from "react-native-vector-icons";
 
 import { createStackNavigator } from "@react-navigation/stack";
 import Screen from "./Edit";
+import HomePage from "./Homepage";
+import { api as api } from "../app.json";
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +40,10 @@ const Edit = () => {
             iconName = "door";
           } else if (route.name === "Users") {
             iconName = "school";
+          } else if (route.name === "Home") {
+            iconName = "home";
+          } else if (route.name === "Sample") {
+            iconName = "login";
           }
 
           // You can return any component that you like here!
@@ -51,7 +61,14 @@ const Edit = () => {
           tabBarActiveTintColor: "red",
         }}
       />
-
+      {/* <Tab.Screen
+        name="Sample"
+        component={Mobile}
+        options={{
+          tabBarLabel: "Sample",
+          tabBarActiveTintColor: "red",
+        }}
+      /> */}
       <Tab.Screen
         name="Users"
         component={Array}
@@ -77,13 +94,24 @@ const Edit = () => {
           tabBarActiveTintColor: "red",
         }}
       />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarLabel: "Home",
+          tabBarActiveTintColor: "red",
+        }}
+      />
     </Tab.Navigator>
   );
 };
+ScrollView;
+ScrollView;
 
 export default function App() {
   // global.notice = Sweet;
   global.notice = Awesome;
+  global.api = api;
   const [expanded, setExpanded] = React.useState(true);
 
   const handlePress = () => setExpanded(!expanded);
@@ -96,6 +124,23 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="Screen" component={Screen} />
+        <Stack.Screen
+          name="Signin"
+          component={Mobile}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Chipper"
+          component={Chipper}
+          options={{ headerShown: false }}
+        />
+
+        <Stack.Screen
+          name="Menu"
+          component={Menu}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </View>
   );

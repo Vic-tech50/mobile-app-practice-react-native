@@ -12,8 +12,17 @@ const styles = StyleSheet.create({
     paddingBottom: 50,
   },
 
+  firstFlex2: {
+    flex: 1,
+    flexDirection: "row",
+    alignItems: "flex-start",
+    justifyContent: "space-between",
+    paddingBottom: 50,
+  },
+
   secondFlex: {
     flex: 2,
+    padding: 30,
   },
 
   txt: {
